@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		651D726F2051CFE100876A5B /* Border Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D726E2051CFE100876A5B /* Border Button.swift */; };
+		65C991CA205C54440004FE82 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C991C9205C54440004FE82 /* TextField.swift */; };
 		65F8CEF6204FADDA007AEEE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CEF5204FADDA007AEEE4 /* AppDelegate.swift */; };
 		65F8CEF8204FADDA007AEEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8CEF7204FADDA007AEEE4 /* ViewController.swift */; };
 		65F8CEFB204FADDA007AEEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65F8CEF9204FADDA007AEEE4 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		651D726E2051CFE100876A5B /* Border Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Border Button.swift"; sourceTree = "<group>"; };
+		65C991C9205C54440004FE82 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		65F8CEF2204FADDA007AEEE4 /* Scores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65F8CEF5204FADDA007AEEE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65F8CEF7204FADDA007AEEE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				65F8CEF5204FADDA007AEEE4 /* AppDelegate.swift */,
 				65F8CEF7204FADDA007AEEE4 /* ViewController.swift */,
 				65F8CEF9204FADDA007AEEE4 /* Main.storyboard */,
+				65C991C9205C54440004FE82 /* TextField.swift */,
+				651D726E2051CFE100876A5B /* Border Button.swift */,
 				65F8CEFC204FADDA007AEEE4 /* Assets.xcassets */,
 				65F8CEFE204FADDA007AEEE4 /* LaunchScreen.storyboard */,
 				65F8CF01204FADDA007AEEE4 /* Info.plist */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651D726F2051CFE100876A5B /* Border Button.swift in Sources */,
 				65F8CEF8204FADDA007AEEE4 /* ViewController.swift in Sources */,
 				65F8CEF6204FADDA007AEEE4 /* AppDelegate.swift in Sources */,
+				65C991CA205C54440004FE82 /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

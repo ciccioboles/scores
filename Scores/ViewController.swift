@@ -8,18 +8,81 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+        //let giantsScore = Int(giantsScoreLabel.text!)
+        //let visitorScore = Int(visitorScoreLabel.text!)
+    
+    @IBOutlet weak var giantsTextField: UITextField!
+    
+    @IBOutlet weak var visitorTextField: UITextField!
+    @IBOutlet weak var giantsScoreLabel: UILabel!
+    @IBOutlet weak var visitorScoreLabel: UILabel!
+    @IBOutlet weak var winnerLabel: UILabel!
+    
+    @IBOutlet weak var whoWonLabel: BorderButton!
+    
+    @IBOutlet weak var resetBtn: BorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        giantsTextField.delegate = self
+        visitorTextField.delegate = self
+        
+        winnerLabel.text = "enter a score"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("textFieldShouldReturn was called")
+        giantsTextField.resignFirstResponder()
+        visitorTextField.resignFirstResponder()
+        return true
     }
-
-
+    
+    
+    @IBAction func whoWonPressed(_ sender: Any) {
+        
+        giantsScoreLabel.text = giantsTextField.text
+        visitorScoreLabel.text = visitorTextField.text
+        
+        if String(giantsTextField.text!) > String(visitorTextField.text!) {
+            giantsScoreLabel.text = giantsScoreLabel.text
+            winnerLabel.text = "Giants win!!!"
+        } else if String(visitorTextField.text!) > String(giantsTextField.text!) {
+            visitorScoreLabel.text = visitorScoreLabel.text
+            winnerLabel.text = "Visitors win!!!"
+        } else {
+                winnerLabel.text = "It's a tie..."
+        }
+        
+        resetBtn.isHidden = false
+        whoWonLabel.isHidden = true
+        self.view.endEditing(true)
+        
+        transition()
+    }
+    
+    @IBAction func resetPressed(_ sender: Any) {
+        giantsScoreLabel.text = "0"
+        visitorScoreLabel.text = "0"
+        winnerLabel.text = "Enter a score"
+        giantsTextField.text = ""
+        visitorTextField.text = ""
+        resetBtn.isHidden = true
+        whoWonLabel.isHidden = false
+        transition()
+    }
+    
+    func transition() {
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 0.5
+        transition.timingFunction = CAMediaTimingFunction(name:
+            kCAMediaTimingFunctionEaseOut)
+        view.layer.add(transition, forKey: nil)
+    }
+    
+    
 }
 
