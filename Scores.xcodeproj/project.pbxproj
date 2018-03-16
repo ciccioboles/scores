@@ -39,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65C991CB205C5D020004FE82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65C991CC205C5D120004FE82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65C991C9205C54440004FE82 /* TextField.swift */,
+				651D726E2051CFE100876A5B /* Border Button.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65C991CD205C5D210004FE82 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				65F8CEF7204FADDA007AEEE4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		65F8CEE9204FADDA007AEEE4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +82,13 @@
 		65F8CEF4204FADDA007AEEE4 /* Scores */ = {
 			isa = PBXGroup;
 			children = (
-				65F8CEF5204FADDA007AEEE4 /* AppDelegate.swift */,
-				65F8CEF7204FADDA007AEEE4 /* ViewController.swift */,
+				65C991CD205C5D210004FE82 /* Controller */,
+				65C991CC205C5D120004FE82 /* View */,
+				65C991CB205C5D020004FE82 /* Model */,
 				65F8CEF9204FADDA007AEEE4 /* Main.storyboard */,
-				65C991C9205C54440004FE82 /* TextField.swift */,
-				651D726E2051CFE100876A5B /* Border Button.swift */,
 				65F8CEFC204FADDA007AEEE4 /* Assets.xcassets */,
 				65F8CEFE204FADDA007AEEE4 /* LaunchScreen.storyboard */,
+				65F8CEF5204FADDA007AEEE4 /* AppDelegate.swift */,
 				65F8CF01204FADDA007AEEE4 /* Info.plist */,
 			);
 			path = Scores;

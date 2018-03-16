@@ -19,9 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var giantsScoreLabel: UILabel!
     @IBOutlet weak var visitorScoreLabel: UILabel!
     @IBOutlet weak var winnerLabel: UILabel!
-    
     @IBOutlet weak var whoWonLabel: BorderButton!
-    
     @IBOutlet weak var resetBtn: BorderButton!
     
     override func viewDidLoad() {
