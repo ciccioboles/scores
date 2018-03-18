@@ -12,12 +12,12 @@ class TextField: UITextField {
 
     override func draw(_ rect: CGRect) {
         let size: CGFloat = 20
-        let txtLbl = UILabel(frame: CGRect(x: 5, y: (frame.size.height / 2) - size / 2, width: size, height: size))
-        txtLbl.backgroundColor = #colorLiteral(red: 0.6996104074, green: 0.7574834766, blue: 0.8415586705, alpha: 0.8514822346)
-        txtLbl.textAlignment = .center
-        txtLbl.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        txtLbl.layer.cornerRadius = 5.0
-        txtLbl.clipsToBounds = true
+        let txtField = UILabel(frame: CGRect(x: 15, y: (frame.size.height / 2) - size / 2, width: size, height: size))
+        txtField.backgroundColor = #colorLiteral(red: 0.6996104074, green: 0.7574834766, blue: 0.8415586705, alpha: 0.8514822346)
+        txtField.textAlignment = .center
+        txtField.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        txtField.layer.cornerRadius = 5.0
+        txtField.clipsToBounds = true
         layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         layer.borderWidth = 1.5
 
