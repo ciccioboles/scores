@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //let visitorScore = Int(visitorScoreLabel.text!)
     
     @IBOutlet weak var giantsTextField: UITextField!
-    
     @IBOutlet weak var visitorTextField: UITextField!
     @IBOutlet weak var giantsScoreLabel: UILabel!
     @IBOutlet weak var visitorScoreLabel: UILabel!
@@ -27,7 +26,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         giantsTextField.delegate = self
         visitorTextField.delegate = self
-        
         winnerLabel.text = "enter a score"
     }
   
@@ -57,7 +55,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
         self.view.endEditing(true)
-        
         transition()
     }
     
