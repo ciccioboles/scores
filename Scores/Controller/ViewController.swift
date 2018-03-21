@@ -47,19 +47,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
             visitorScoreLabel.text = visitorTextField.text
         }
         
-
-        
-        if let gtextField = giantsTextField.text {
-            if let vtextFieldf = visitorTextField.text {
-                if gtextField > vtextFieldf {
+                if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
+                    giantsTextField.text = ""
+                    visitorTextField.text = ""
                     winnerLabel.text = "Giants win!!!"
-                } else if vtextFieldf > gtextField {
+                } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
+                    giantsTextField.text = ""
+                    visitorTextField.text = ""
                     winnerLabel.text = "Visitors win!!!"
                 } else {
-                    winnerLabel.text = "It's a tie..."
-                    }
-            }
-        }
+                        winnerLabel.text = "It's a tie..."
+                }
+        
      
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
@@ -102,6 +101,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 
 
+//        if let gtextField = giantsTextField.text {
+//            if let vtextFieldf = visitorTextField.text {
+//                if gtextField > vtextFieldf {
+//                    giantsScoreLabel.text = gtextField
+//                    visitorScoreLabel.text = vtextFieldf
+//                    winnerLabel.text = "Giants win!!!"
+//                } else if vtextFieldf > gtextField {
+//                    visitorScoreLabel.text = vtextFieldf
+//                    giantsScoreLabel.text = gtextField
+//                    winnerLabel.text = "Visitors win!!!"
+//                } else {
+//                    winnerLabel.text = "It's a tie..."
+//                    }
+//            }
+//        }
 
 
 
