@@ -39,25 +39,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func whoWonPressed(_ sender: Any) {
        
 
-        if giantsTextField.text != nil && Int(giantsTextField.text!)! >= 0 {
-            giantsScoreLabel.text = giantsTextField.text
-        }
-
-        if visitorTextField.text != nil && Int(visitorTextField.text!)! >= 0 {
-            visitorScoreLabel.text = visitorTextField.text
+        if giantsTextField.text != nil {
+            if let score = Int(giantsTextField.text!) {
+                if score >= 0 {
+                    giantsScoreLabel.text = giantsTextField.text
+                }
+            }
+            
         }
         
-                if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
-                    giantsTextField.text = ""
-                    visitorTextField.text = ""
-                    winnerLabel.text = "Giants win!!!"
-                } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-                    giantsTextField.text = ""
-                    visitorTextField.text = ""
-                    winnerLabel.text = "Visitors win!!!"
-                } else {
+        if visitorTextField.text != nil {
+            if let score = Int(visitorTextField.text!) {
+                if score >= 0 {
+                    visitorScoreLabel.text = visitorTextField.text
+                    if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
+                        giantsTextField.text = ""
+                        visitorTextField.text = ""
+                        winnerLabel.text = "Giants win!!!"
+                    } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
+                        giantsTextField.text = ""
+                        visitorTextField.text = ""
+                        winnerLabel.text = "Visitors win!!!"
+                    } else {
                         winnerLabel.text = "It's a tie..."
+                    }
                 }
+            }
+            
+        }
+
+        
+        
         
      
         resetBtn.isHidden = false
@@ -101,50 +113,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
 
 
-//        if let gtextField = giantsTextField.text {
-//            if let vtextFieldf = visitorTextField.text {
-//                if gtextField > vtextFieldf {
-//                    giantsScoreLabel.text = gtextField
-//                    visitorScoreLabel.text = vtextFieldf
-//                    winnerLabel.text = "Giants win!!!"
-//                } else if vtextFieldf > gtextField {
-//                    visitorScoreLabel.text = vtextFieldf
-//                    giantsScoreLabel.text = gtextField
-//                    winnerLabel.text = "Visitors win!!!"
-//                } else {
-//                    winnerLabel.text = "It's a tie..."
-//                    }
-//            }
-//        }
 
-
-
-
-
-
-
-//        if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
-//            giantsTextField.text = ""
-//            visitorTextField.text = ""
-//            winnerLabel.text = "Giants win!!!"
-//        } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-//            giantsTextField.text = ""
-//            visitorTextField.text = ""
-//            winnerLabel.text = "Visitors win!!!"
-//        } else {
-//                winnerLabel.text = "It's a tie..."
-//        }
-
-//        guard let gtextField = giantsTextField.text else {
-//            winnerLabel.text = "invalid"
-//            return
-//        }
-
-
-
-//    func clearTextFields() {
-//        giantsTextField.text = ""
-//        visitorTextField.text = ""
-//        giantsScoreLabel.text = "0"
-//        visitorScoreLabel.text = "0"
-//    }
