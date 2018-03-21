@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var giantsScoreLabel: UILabel!
     @IBOutlet weak var visitorScoreLabel: UILabel!
     @IBOutlet weak var winnerLabel: UILabel!
-    @IBOutlet weak var whoWonLabel: BorderButton!
+    @IBOutlet weak var whoWonLabel: UILabel!
     @IBOutlet weak var resetBtn: BorderButton!
     
     override func viewDidLoad() {
@@ -30,7 +30,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("textFieldShouldReturn was called")
         giantsTextField.resignFirstResponder()
         visitorTextField.resignFirstResponder()
         return true
@@ -38,24 +37,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func whoWonPressed(_ sender: Any) {
-        
-        giantsScoreLabel.text = giantsTextField.text
-        visitorScoreLabel.text = visitorTextField.text
-        
-        if String(giantsTextField.text!) > String(visitorTextField.text!) {
-            giantsScoreLabel.text = giantsScoreLabel.text
-            winnerLabel.text = "Giants win!!!"
-        } else if String(visitorTextField.text!) > String(giantsTextField.text!) {
-            visitorScoreLabel.text = visitorScoreLabel.text
-            winnerLabel.text = "Visitors win!!!"
-        } else {
-                winnerLabel.text = "It's a tie..."
+       
+
+        if giantsTextField.text != nil && Int(giantsTextField.text!)! >= 0 {
+            giantsScoreLabel.text = giantsTextField.text
+        }
+
+        if visitorTextField.text != nil && Int(visitorTextField.text!)! >= 0 {
+            visitorScoreLabel.text = visitorTextField.text
         }
         
+
+        
+        if let gtextField = giantsTextField.text {
+            if let vtextFieldf = visitorTextField.text {
+                if gtextField > vtextFieldf {
+                    winnerLabel.text = "Giants win!!!"
+                } else if vtextFieldf > gtextField {
+                    winnerLabel.text = "Visitors win!!!"
+                } else {
+                    winnerLabel.text = "It's a tie..."
+                    }
+            }
+        }
+     
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
         self.view.endEditing(true)
         transition()
+        
     }
     
     @IBAction func resetPressed(_ sender: Any) {
@@ -69,6 +79,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         transition()
     }
     
+
+    
     func transition() {
         let transition = CATransition()
         transition.type = kCATransitionFade
@@ -81,3 +93,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
+//            giantsTextField.text = ""
+//            visitorTextField.text = ""
+//            winnerLabel.text = "Giants win!!!"
+//        } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
+//            giantsTextField.text = ""
+//            visitorTextField.text = ""
+//            winnerLabel.text = "Visitors win!!!"
+//        } else {
+//                winnerLabel.text = "It's a tie..."
+//        }
+
+//        guard let gtextField = giantsTextField.text else {
+//            winnerLabel.text = "invalid"
+//            return
+//        }
+
+
+
+//    func clearTextFields() {
+//        giantsTextField.text = ""
+//        visitorTextField.text = ""
+//        giantsScoreLabel.text = "0"
+//        visitorScoreLabel.text = "0"
+//    }

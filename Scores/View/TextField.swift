@@ -24,10 +24,6 @@ class TextField: UITextField {
         
     }
     
-//    override func prepareForInterfaceBuilder() {
-//        customizeView()
-//    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         customizeView()
