@@ -38,12 +38,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func whoWonPressed(_ sender: Any) {
         
-        
         if giantsTextField.text != nil {
             if let score = Int(giantsTextField.text!) {
                 if score >= 0 {
                     giantsScoreLabel.text = giantsTextField.text
-                    visitorScoreLabel.text = visitorTextField.text
+                    //visitorScoreLabel.text = visitorTextField.text
                     if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
                         giantsTextField.text = ""
                         visitorTextField.text = ""
@@ -59,13 +58,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-
+        if visitorTextField.text != nil {
+            if let score = Int(visitorTextField.text!) {
+                if score >= 0 {
+                    //giantsScoreLabel.text = giantsTextField.text
+                    visitorScoreLabel.text = visitorTextField.text
+                    if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
+                        giantsTextField.text = ""
+                        visitorTextField.text = ""
+                        winnerLabel.text = "Giants win!!!"
+                    } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
+                        giantsTextField.text = ""
+                        visitorTextField.text = ""
+                        winnerLabel.text = "Visitors win!!!"
+                    } else {
+                        winnerLabel.text = "It's a tie..."
+                    }
+                }
+            }
+            
+        }
         
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
         self.view.endEditing(true)
         transition()
-        
     }
     
     @IBAction func resetPressed(_ sender: Any) {
