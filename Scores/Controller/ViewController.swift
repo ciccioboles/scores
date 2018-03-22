@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-
-        //let giantsScore = Int(giantsScoreLabel.text!)
-        //let visitorScore = Int(visitorScoreLabel.text!)
+    
+    //let giantsScore = Int(giantsScoreLabel.text!)
+    //let visitorScore = Int(visitorScoreLabel.text!)
     
     @IBOutlet weak var giantsTextField: UITextField!
     @IBOutlet weak var visitorTextField: UITextField!
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         visitorTextField.delegate = self
         winnerLabel.text = "enter a score"
     }
-  
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         giantsTextField.resignFirstResponder()
         visitorTextField.resignFirstResponder()
@@ -37,31 +37,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func whoWonPressed(_ sender: Any) {
-       
-
+        
+        
         if giantsTextField.text != nil {
             if let score = Int(giantsTextField.text!) {
                 if score >= 0 {
                     giantsScoreLabel.text = giantsTextField.text
-                    if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Giants win!!!"
-                    } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Visitors win!!!"
-                    } else {
-                        winnerLabel.text = "It's a tie..."
-                    }
-                }
-            }
-            
-        }
-        
-        if visitorTextField.text != nil {
-            if let score = Int(visitorTextField.text!) {
-                if score >= 0 {
                     visitorScoreLabel.text = visitorTextField.text
                     if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
                         giantsTextField.text = ""
@@ -76,13 +57,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
-            
         }
+        
 
         
-        
-        
-     
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
         self.view.endEditing(true)
@@ -101,7 +79,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         transition()
     }
     
-
+    
     
     func transition() {
         let transition = CATransition()
