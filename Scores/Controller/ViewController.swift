@@ -41,19 +41,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if giantsTextField.text != nil {
             if let score = Int(giantsTextField.text!) {
                 if score >= 0 {
+                    print(score)
                     giantsScoreLabel.text = giantsTextField.text
-                    //visitorScoreLabel.text = visitorTextField.text
-                    if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Giants win!!!"
-                    } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Visitors win!!!"
-                    } else {
-                        winnerLabel.text = "It's a tie..."
-                    }
                 }
             }
         }
@@ -61,23 +50,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if visitorTextField.text != nil {
             if let score = Int(visitorTextField.text!) {
                 if score >= 0 {
-                    //giantsScoreLabel.text = giantsTextField.text
                     visitorScoreLabel.text = visitorTextField.text
-                    if Int(giantsTextField.text!)! > Int(visitorTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Giants win!!!"
-                    } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-                        giantsTextField.text = ""
-                        visitorTextField.text = ""
-                        winnerLabel.text = "Visitors win!!!"
-                    } else {
-                        winnerLabel.text = "It's a tie..."
-                    }
                 }
             }
-            
         }
+        
+        if let gtf = Int(giantsTextField.text!), let vtf = Int(visitorTextField.text!) {
+            if gtf > vtf {
+                giantsTextField.text = ""
+                visitorTextField.text = ""
+                winnerLabel.text = "Giants win!!!"
+            } else if vtf > gtf {
+                giantsTextField.text = ""
+                visitorTextField.text = ""
+                winnerLabel.text = "Visitors win!!!"
+            } else {
+                winnerLabel.text = "It's a tie..."
+            }
+        }
+        
+        
+        
+//            if Int(giantsTextField.text!) > Int(visitorTextField.text!) {
+//            giantsTextField.text = ""
+//            visitorTextField.text = ""
+//            winnerLabel.text = "Giants win!!!"
+//        } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
+//            giantsTextField.text = ""
+//            visitorTextField.text = ""
+//            winnerLabel.text = "Visitors win!!!"
+//        } else {
+//            winnerLabel.text = "It's a tie..."
+//        }
+//
         
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
