@@ -68,22 +68,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 winnerLabel.text = "It's a tie..."
             }
         }
-        
-        
-        
-//            if Int(giantsTextField.text!) > Int(visitorTextField.text!) {
-//            giantsTextField.text = ""
-//            visitorTextField.text = ""
-//            winnerLabel.text = "Giants win!!!"
-//        } else if Int(visitorTextField.text!)! > Int(giantsTextField.text!)! {
-//            giantsTextField.text = ""
-//            visitorTextField.text = ""
-//            winnerLabel.text = "Visitors win!!!"
-//        } else {
-//            winnerLabel.text = "It's a tie..."
-//        }
-//
-        
+      
         resetBtn.isHidden = false
         whoWonLabel.isHidden = true
         self.view.endEditing(true)
