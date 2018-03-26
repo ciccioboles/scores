@@ -41,7 +41,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if giantsTextField.text != nil {
             if let score = Int(giantsTextField.text!) {
                 if score >= 0 {
-                    print(score)
                     giantsScoreLabel.text = giantsTextField.text
                 }
             }
